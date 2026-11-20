@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Northwire — Considered Tech for Everyday Life</title>
+  <meta name="description" content="Northwire is a small tech store curating laptops, phones, audio and accessories. Free shipping over $99 and 30-day returns." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <header class="site-header" id="site-header">
+    <div class="container header-inner">
+      <a href="#" class="logo" id="logo-link" aria-label="Northwire home">
+        <span class="logo-mark" aria-hidden="true"></span>Northwire
+      </a>
+      <nav class="main-nav" aria-label="Primary">
+        <a href="#shop" id="nav-shop">Shop</a>
+        <a href="#perks" id="nav-perks">Why us</a>
+        <a href="#newsletter" id="nav-newsletter">Updates</a>
+      </nav>
+      <button class="cart-btn" id="cart-open-btn" aria-label="Open cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+        <span>Cart</span>
+        <span class="cart-count" id="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-inner">
+        <div class="hero-copy">
+          <p class="eyebrow">Winter collection 2026</p>
+          <h1>Tech that fits quietly into your day.</h1>
+          <p class="lede">A small, hand-picked range of laptops, phones and audio gear. Tested by us, shipped free over $99, returnable for 30 days.</p>
+          <div class="hero-actions">
+            <a href="#shop" class="btn btn-primary" id="hero-shop-btn">Shop the range</a>
+            <a href="#perks" class="btn btn-ghost" id="hero-learn-btn">How we choose</a>
+          </div>
+        </div>
+        <figure class="hero-media">
+          <img src="images/hero.jpg" alt="A laptop, headphones, phone and smartwatch on a stone desk by a window" width="1376" height="768" />
+        </figure>
+      </div>
+    </section>
+
+    <section class="shop" id="shop" aria-labelledby="shop-title">
+      <div class="container">
+        <div class="shop-head">
+          <div>
+            <h2 id="shop-title">Shop all</h2>
+            <p class="muted" id="result-count">6 products</p>
+          </div>
+          <div class="shop-controls">
+            <div class="chips" role="tablist" aria-label="Filter by category" id="category-chips">
+              <button class="chip is-active" data-cat="all" id="chip-all" role="tab" aria-selected="true">All</button>
+              <button class="chip" data-cat="computing" id="chip-computing" role="tab" aria-selected="false">Computing</button>
+              <button class="chip" data-cat="mobile" id="chip-mobile" role="tab" aria-selected="false">Mobile</button>
+              <button class="chip" data-cat="audio" id="chip-audio" role="tab" aria-selected="false">Audio</button>
+            </div>
+            <label class="select-wrap">
+              <span class="sr-only">Sort products</span>
+              <select id="sort-select">
+                <option value="featured">Featured</option>
+                <option value="price-asc">Price: low to high</option>
+                <option value="price-desc">Price: high to low</option>
+              </select>
+            </label>
+          </div>
+        </div>
+        <ul class="product-grid" id="product-grid"></ul>
+      </div>
+    </section>
+
+    <section class="perks" id="perks" aria-labelledby="perks-title">
+      <div class="container">
+        <h2 id="perks-title" class="sr-only">Why shop with Northwire</h2>
+        <ul class="perk-list">
+          <li class="perk">
+            <span class="perk-num">01</span>
+            <h3>Fewer, better products</h3>
+            <p>We test every item for a month before it goes on the shelf. Most don't make it.</p>
+          </li>
+          <li class="perk">
+            <span class="perk-num">02</span>
+            <h3>Free shipping over $99</h3>
+            <p>Delivered in 2–4 business days, carbon-neutral, in plastic-free packaging.</p>
+          </li>
+          <li class="perk">
+            <span class="perk-num">03</span>
+            <h3>30-day returns</h3>
+            <p>Changed your mind? Send it back, no questions, and we cover the label.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="newsletter" id="newsletter" aria-labelledby="newsletter-title">
+      <div class="container newsletter-inner">
+        <div>
+          <h2 id="newsletter-title">New arrivals, once a month.</h2>
+          <p class="muted">No spam. Just what's new and worth your time.</p>
+        </div>
+        <form class="newsletter-form" id="newsletter-form" novalidate>
+          <label for="newsletter-email" class="sr-only">Email address</label>
+          <input type="email" id="newsletter-email" placeholder="you@example.com" required autocomplete="email" />
+          <button type="submit" class="btn btn-primary" id="newsletter-submit">Subscribe</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span class="logo small"><span class="logo-mark" aria-hidden="true"></span>Northwire</span>
+      <p class="muted">© 2026 Northwire Supply Co. All prices in USD.</p>
+    </div>
+  </footer>
+
+  <!-- Cart drawer -->
+  <div class="overlay" id="cart-overlay" hidden></div>
+  <aside class="cart-drawer" id="cart-drawer" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-head">
+      <h2>Your cart</h2>
+      <button class="icon-btn" id="cart-close-btn" aria-label="Close cart">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+    <div class="ship-meter" id="ship-meter">
+      <p id="ship-text">Add $99 more for free shipping</p>
+      <div class="meter"><span id="ship-bar"></span></div>
+    </div>
+    <ul class="cart-items" id="cart-items"></ul>
+    <div class="cart-empty" id="cart-empty">
+      <p>Your cart is empty.</p>
+      <button class="btn btn-ghost" id="cart-browse-btn">Browse products</button>
+    </div>
+    <div class="cart-foot" id="cart-foot">
+      <div class="row"><span>Subtotal</span><strong id="cart-subtotal">$0</strong></div>
+      <div class="row muted"><span>Shipping</span><span id="cart-shipping">—</span></div>
+      <button class="btn btn-primary btn-block" id="checkout-btn">Checkout</button>
+    </div>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
